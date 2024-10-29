@@ -10,7 +10,7 @@
         <MudTextField Label="Título"
                       HelperText="Campo obrigatório"
                       @bind-Value="InputModel.Title"
-                      For="@(() => InputModel.Title)"/>
+                      For="(() => InputModel.Title)"/>
 
         <MudTextField Label="Quanto?"
                       T="decimal"
@@ -18,7 +18,7 @@
                       Variant="Variant.Text"
                       HelperText="Informe o valor que será pago ou recebido"
                       @bind-Value="InputModel.Amount"
-                      For="@(() => InputModel.Amount)"/>
+                      For="(() => InputModel.Amount)"/>
 
         <MudDatePicker Label="Quando?"
                        @bind-Date="@InputModel.PaidOrReceivedAt"
@@ -43,7 +43,7 @@
             AnchorOrigin="Origin.BottomCenter">
             @foreach (var category in Categories)
             {
-                <MudSelectItem T="long" Value="@category.Id">
+                <MudSelectItem T="long" Value="category.Id">
                     @category.Title
                 </MudSelectItem>
             }
